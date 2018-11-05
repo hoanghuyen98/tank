@@ -6,6 +6,7 @@ import base.event.KeyEventPress;
 import base.renderer.SingleImageRenderer;
 import base.scene.SceneManager;
 import base.scene.SceneStage1;
+import base.scene.StartGameStage1.SceneImageStage1;
 import tklibs.SpriteUtils;
 
 import java.awt.image.BufferedImage;
@@ -21,8 +22,8 @@ public class Banner extends GameObject {// quang thoi gian welcoameScenee ton ta
 
     @Override
     public void run() {
-        if(KeyEventPress.isAnyKeyPress){
-            SceneManager.signNewScene(new SceneStage1());
+        if(KeyEventPress.isAnyKeyPress && !KeyEventPress.isGoStageKeyPress  ){
+            SceneManager.signNewScene(new SceneImageStage1());
         }
     }
 }
