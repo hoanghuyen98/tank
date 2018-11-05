@@ -40,9 +40,9 @@ public class SceneStage1 extends Scene {
         enemyType4.position.set(Settings.WAY_SIZE*1, Settings.WAY_SIZE*1);
         EnemySummoner.enemyBornManage.add(enemyType4);
 
-//        this.enemyType2 = GameObject.recycle(EnemyType2.class);
-//        enemyType2.position.set(Settings.WAY_SIZE*21, Settings.WAY_SIZE*5);
-//        EnemySummoner.enemyBornManage.add(enemyType2);
+        this.enemyType1 = GameObject.recycle(EnemyType1.class);
+        enemyType1.position.set(Settings.WAY_SIZE*21, Settings.WAY_SIZE*5);
+        EnemySummoner.enemyBornManage.add(enemyType1);
 
         this.enemyType3 = GameObject.recycle(EnemyType3.class);
         enemyType3.position.set(Settings.WAY_SIZE*10, Settings.WAY_SIZE*1);

@@ -1,4 +1,4 @@
-package base.scene.welcomeScene;
+package base.scene;
 
 import base.GameObject;
 import base.Settings;
@@ -10,10 +10,10 @@ import tklibs.SpriteUtils;
 
 import java.awt.image.BufferedImage;
 
-public class Banner extends GameObject {// quang thoi gian welcoameScenee ton tai
+public class Banner extends GameObject {
     public Banner(){
         super();
-        BufferedImage image = SpriteUtils.loadImage("assets/406x228bb.jpg");
+        BufferedImage image = SpriteUtils.loadImage("assets/spaceinvader.png");
         this.renderer = new SingleImageRenderer(image);
         this.position.set((Settings.SCREEN_WIDHT) / 2 ,
                 (Settings.SCREEN_HEIGHT) / 2);

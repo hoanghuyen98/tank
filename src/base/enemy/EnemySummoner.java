@@ -8,6 +8,7 @@ import base.physics.Physics;
 import base.scene.SceneManager;
 import base.scene.SceneStage2;
 import base.scene.gameoverScen.GameoverScene;
+import base.scene.welcomeScene.WelcomeScene;
 
 import java.util.ArrayList;
 
@@ -21,6 +22,7 @@ public class EnemySummoner extends GameObject implements Physics {
     public EnemyType2 enemyType2;
     public EnemyType3 enemyType3;
     public EnemyType4 enemyType4;
+    public static int sceneLeft = 1;
 
     public EnemySummoner() {
         this.collider = new BoxCollider(54, 54);
@@ -29,16 +31,18 @@ public class EnemySummoner extends GameObject implements Physics {
 
     @Override
     public void run() {
-        Enemy enemy = (Enemy)GameObject.intersect(Enemy.class, this);
+        Enemy enemy = (Enemy) GameObject.intersect(Enemy.class, this);
         if (enemy == null && enemyNow < 3) {
             this.spawn();
-
         }
 
-        if (enemyLeft == 0 && enemyNow == 0) {
+        if (enemyLeft == 0 && enemyNow == 0 && sceneLeft > 0) {
             SceneManager.signNewScene(new SceneStage2());
+//            sceneLeft--;
         }
-
+        if (sceneLeft == 0) {
+            SceneManager.signNewScene(new WelcomeScene());
+        }
     }
 
     public void spawn(){

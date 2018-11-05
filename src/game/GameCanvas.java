@@ -2,6 +2,7 @@ package game;
 
 import base.GameObject;
 import base.scene.SceneManager;
+import base.scene.lever1;
 import base.scene.welcomeScene.WelcomeScene;
 
 import javax.swing.*;

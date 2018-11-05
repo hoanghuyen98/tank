@@ -59,13 +59,14 @@ public class EnemyBullet extends GameObject implements Physics {
         if (tank != null) {
             tank.takeDamage(this.damage);
             this.destroy();
-            SceneManager.signNewScene(new GameoverScene() );
+            SceneManager.signNewScene(new GameoverScene());
         }
 
         if(playBullet != null){
             this.destroy();
             playBullet.destroy();
         }
+
         if(this.checkIntersectsEagle()){//check aegle
             SceneManager.signNewScene(new GameoverScene());
         }
