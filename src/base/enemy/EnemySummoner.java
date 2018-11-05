@@ -5,8 +5,10 @@ import base.Settings;
 import base.Vector2D;
 import base.physics.BoxCollider;
 import base.physics.Physics;
+import base.scene.Scene;
 import base.scene.SceneManager;
 import base.scene.SceneStage2;
+import base.scene.StartGameStage1.SceneImageStage2;
 import base.scene.gameoverScen.GameoverScene;
 import base.scene.welcomeScene.WelcomeScene;
 
@@ -22,7 +24,6 @@ public class EnemySummoner extends GameObject implements Physics {
     public EnemyType2 enemyType2;
     public EnemyType3 enemyType3;
     public EnemyType4 enemyType4;
-    public static int sceneLeft = 1;
 
     public EnemySummoner() {
         this.collider = new BoxCollider(54, 54);
@@ -36,23 +37,24 @@ public class EnemySummoner extends GameObject implements Physics {
             this.spawn();
         }
 
-        if (enemyLeft == 0 && enemyNow == 0 && sceneLeft > 0) {
-            SceneManager.signNewScene(new SceneStage2());
-//            sceneLeft--;
+        if (enemyLeft == 0 && enemyNow == 0 && Scene.sceneLeft > 0) {
+
+            SceneManager.signNewScene(new SceneImageStage2());
         }
-        if (sceneLeft == 0) {
+        if (enemyLeft == 0 && enemyNow == 0 && Scene.sceneLeft == 0) {
             SceneManager.signNewScene(new WelcomeScene());
+            //Thay = Scene Winner!!!
         }
     }
 
     public void spawn(){
-        if (enemyLeft >= 2) {
-            this.enemyType4 = GameObject.recycle(EnemyType4.class);
-            enemyType4.position.set(this.position.x, this.position.y);
+        if (enemyLeft >= 4) {
+            this.enemyType1 = GameObject.recycle(EnemyType1.class);
+            enemyType1.position.set(this.position.x, this.position.y);
             enemyLeft --;
-            EnemySummoner.enemyBornManage.add(enemyType4);
+            EnemySummoner.enemyBornManage.add(enemyType1);
             enemyNow++;
-        } else if (enemyLeft >= 1) {
+        } else if (enemyLeft >= 2) {
             this.enemyType4 = GameObject.recycle(EnemyType4.class);
             enemyType4.position.set(this.position.x, this.position.y);
             enemyLeft --;

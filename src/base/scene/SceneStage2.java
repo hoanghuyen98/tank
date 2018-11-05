@@ -48,7 +48,8 @@ public class SceneStage2 extends Scene{
         EnemySummoner.enemyNow = 3;
         EnemySummoner.enemyLeft = 5;
 
-        System.out.println(EnemySummoner.enemyLeft);
+        Scene.sceneLeft = 0;
+        System.out.println(Scene.sceneLeft);
 
         String[] fileNames = {
                 "level_start.wav",

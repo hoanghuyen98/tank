@@ -10,6 +10,7 @@ import base.player.Tank;
 public abstract class Scene {
    // public Player player;
   //  public SnackManager snackManager;
+    public static int sceneLeft = 2;
 
     public Tank tank;
     public static Boom boom;

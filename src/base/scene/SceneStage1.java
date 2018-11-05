@@ -49,8 +49,10 @@ public class SceneStage1 extends Scene {
         EnemySummoner.enemyBornManage.add(enemyType3);
 
         EnemySummoner.enemyNow = 3;
-        EnemySummoner.enemyLeft = 5;
+        EnemySummoner.enemyLeft = 6;
 
+        Scene.sceneLeft = 1;
+        System.out.println(Scene.sceneLeft);
 
         arr= new WallManagement("assets\\maps\\painmap.txt" );
 
