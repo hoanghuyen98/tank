@@ -18,6 +18,8 @@ public class SceneStage2 extends Scene{
 
     @Override
     public void init() {
+        EnemySummoner.enemyBornManage.clear();
+
         this.tank = GameObject.recycle(Tank.class);
         tank.position.set(9* Settings.WAY_SIZE,25 * Settings.WAY_SIZE);
 
@@ -41,7 +43,6 @@ public class SceneStage2 extends Scene{
         EnemySummoner.enemyLeft = 6;
 
         Scene.sceneLeft = 0;
-        System.out.println(Scene.sceneLeft);
 
         String[] fileNames = {
                 "level_start.wav",
