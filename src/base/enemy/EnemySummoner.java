@@ -18,8 +18,8 @@ public class EnemySummoner extends GameObject implements Physics {
     public static ArrayList<Enemy> enemyBornManage = new ArrayList<>();
 
     BoxCollider collider;
-    public static int enemyLeft = 3;
-    public static int enemyNow = 3;
+    public static int enemyLeft;
+    public static int enemyNow;
     public EnemyType1 enemyType1;
     public EnemyType2 enemyType2;
     public EnemyType3 enemyType3;
@@ -36,12 +36,13 @@ public class EnemySummoner extends GameObject implements Physics {
         if (enemy == null && enemyNow < 3) {
             this.spawn();
         }
-
-        if (enemyLeft == 0 && enemyNow == 0 && Scene.sceneLeft > 0) {
+        System.out.println(enemyLeft);
+        System.out.println(enemyNow);
+        if (enemyLeft <= 0 && enemyNow <= 0 && Scene.sceneLeft > 0) {
 
             SceneManager.signNewScene(new SceneImageStage2());
         }
-        if (enemyLeft == 0 && enemyNow == 0 && Scene.sceneLeft == 0) {
+        if (enemyLeft <= 0 && enemyNow <= 0 && Scene.sceneLeft == 0) {
             SceneManager.signNewScene(new WelcomeScene());
             //Thay = Scene Winner!!!
         }
