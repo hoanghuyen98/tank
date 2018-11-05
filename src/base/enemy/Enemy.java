@@ -175,6 +175,8 @@ public class Enemy extends GameObject implements Physics {
     public void destroy() {
         super.destroy();
         EnemySummoner.enemyNow -= 1;
+        base.enemy.Explosion explosion = GameObject.recycle(base.enemy.Explosion.class);
+        explosion.position.set(this.position);
     }
 
     @Override
