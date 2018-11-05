@@ -49,9 +49,9 @@ public class GameWindow extends JFrame {
                else if(e.getKeyCode() == KeyEvent.VK_J) {
                     KeyEventPress.isFirePress = true;
                 }
-                else if(e.getKeyCode() == KeyEvent.VK_ENTER) {//go to SceneImageStage1
+                /*else if(e.getKeyCode() == KeyEvent.VK_ENTER) {//go to SceneImageStage1
                     KeyEventPress.isGoStageKeyPress = true;
-                }
+                }*/
             }
 
             @Override
@@ -76,9 +76,9 @@ public class GameWindow extends JFrame {
                else if(e.getKeyCode() == KeyEvent.VK_J) {
                     KeyEventPress.isFirePress = false;
                 }
-                else if(e.getKeyCode() == KeyEvent.VK_ENTER) {//go to SceneImageStage1
+                /*else if(e.getKeyCode() == KeyEvent.VK_ENTER) {//go to SceneImageStage1
                     KeyEventPress.isGoStageKeyPress = false;
-                }
+                }*/
             }
         });
     }

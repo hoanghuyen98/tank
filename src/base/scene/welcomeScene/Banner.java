@@ -2,6 +2,7 @@ package base.scene.welcomeScene;
 
 import base.GameObject;
 import base.Settings;
+import base.counter.FrameCounter;
 import base.event.KeyEventPress;
 import base.renderer.SingleImageRenderer;
 import base.scene.SceneManager;
@@ -12,6 +13,7 @@ import tklibs.SpriteUtils;
 import java.awt.image.BufferedImage;
 
 public class Banner extends GameObject {// quang thoi gian welcoameScenee ton tai
+
     public Banner(){
         super();
         BufferedImage image = SpriteUtils.loadImage("assets/406x228bb.jpg");
@@ -22,8 +24,11 @@ public class Banner extends GameObject {// quang thoi gian welcoameScenee ton ta
 
     @Override
     public void run() {
-        if(KeyEventPress.isAnyKeyPress && !KeyEventPress.isGoStageKeyPress  ){
+        if(KeyEventPress.isAnyKeyPress){
             SceneManager.signNewScene(new SceneImageStage1());
         }
+       /* if(KeyEventPress.isAnyKeyPress && !KeyEventPress.isGoStageKeyPress  ){
+            SceneManager.signNewScene(new SceneImageStage1());
+        }*/
     }
 }
