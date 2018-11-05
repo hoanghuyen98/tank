@@ -46,7 +46,7 @@ public class SceneStage2 extends Scene{
         this.enemySummoner = GameObject.recycle(EnemySummoner.class);
 
         EnemySummoner.enemyNow = 3;
-        EnemySummoner.enemyLeft = 5;
+        EnemySummoner.enemyLeft = 6;
 
         Scene.sceneLeft = 0;
         System.out.println(Scene.sceneLeft);
